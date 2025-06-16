@@ -1,0 +1,61 @@
+# ADICIONE ESTAS NOVAS REGRAS
+.git/
+.gitignore
+.gitmodules
+.gitattributes
+
+# Ignorar toda a pasta de usuário exceto o projeto
+/*
+!frontend/
+!frontend/Agendado/
+
+# Ignorar instalações do Anaconda/Miniconda
+anaconda3/
+miniconda3/
+opt/
+
+# Ignorar caches de pacotes
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Ignorar dados de desenvolvimento
+data/
+datasets/
+backups/
+dump.rdb
+
+# Ignorar arquivos de mídia grandes
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mpg
+*.mpeg
+*.m4v
+*.webm
+*.vob
+*.ogv
+*.ogg
+*.gif
+*.bmp
+*.tiff
+*.psd
+*.ai
+*.eps
+*.indd
+*.raw
+
+# Ignorar bancos de dados e arquivos de máquina virtual
+*.sqlite
+*.db
+*.sql
+*.dump
+*.vdi
+*.vmdk
+*.vmx
+*.vhd
