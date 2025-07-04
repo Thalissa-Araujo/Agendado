@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "fb775dac-edca-4832-81d3-da8e16b8d9f5"
+      }
+    },
+    "android": {
+      "package": "com.thalissaaraujo.agendadobackend"
+    }
+  }
+}
