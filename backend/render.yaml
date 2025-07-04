@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: agendado-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node app.js
+    env: node
+    plan: free
+    # Configuração para persistir o SQLite:
+    disk:
+      name: sqlite-data
+      mountPath: /var/lib/sqlite
+      sizeGB: 1
