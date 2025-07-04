@@ -4,3 +4,4 @@
 .DS_Store
 database.sqlite
 whatsapp-session
+ngrok-updater.js
