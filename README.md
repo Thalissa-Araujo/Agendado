@@ -72,6 +72,8 @@ node app.js
 
 ### Configurar o Frontend
 
+Abrir um terminal diferente de onde o backend está rodando
+
 ```bash
 cd frontend/Agendado
 `````````````````````````````````
