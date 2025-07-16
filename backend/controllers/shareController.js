@@ -1,12 +1,11 @@
 // const { SharedCalendar, Professional } = require('../models');
-const { SharedCalendar } = require('../models/SharedCalendar');
-const { Professional } = require('../models/Professional');
+const SharedCalendar = require('../models/SharedCalendar');
+const Professional = require('../models/Professional');
 
 exports.shareCalendar = async (req, res) => {
   try {
     const { ownerId, sharedWithId, permissionLevel } = req.body;
     
-    // Check if both professionals exist
     const owner = await Professional.findByPk(ownerId);
     const sharedWith = await Professional.findByPk(sharedWithId);
     
@@ -14,7 +13,6 @@ exports.shareCalendar = async (req, res) => {
       return res.status(404).json({ error: 'Professional not found' });
     }
 
-    // Check if sharing already exists
     const existingShare = await SharedCalendar.findOne({
       where: { ownerId, sharedWithId }
     });
@@ -39,13 +37,11 @@ exports.getSharedCalendars = async (req, res) => {
   try {
     const { professionalId } = req.params;
     
-    // Get calendars shared with me
     const sharedWithMe = await SharedCalendar.findAll({
       where: { sharedWithId: professionalId },
       include: [{ model: Professional, as: 'owner' }]
     });
     
-    // Get calendars I've shared
     const sharedByMe = await SharedCalendar.findAll({
       where: { ownerId: professionalId },
       include: [{ model: Professional, as: 'sharedWith' }]

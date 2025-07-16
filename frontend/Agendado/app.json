@@ -11,8 +11,7 @@
       "backgroundColor": "#116677"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0,
-      "useClassicUpdates": true
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
@@ -38,7 +37,7 @@
       [
         "expo-notifications",
         {
-          "icon": "./assets/images/notification-icon.png",
+          "icon": "./assets/images/icon.png",
           "color": "#116677"
         }
       ]

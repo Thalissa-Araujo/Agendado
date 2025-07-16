@@ -1,10 +1,12 @@
-// const { Service, Professional } = require('../models');
-const { Service } = require('../models/Service');
-const { Professional } = require('../models/Professional');
+const Service = require('../models/Service');
+const Professional = require('../models/Professional');
 
 exports.createService = async (req, res) => {
   try {
-    const { professionalId, name, duration, price, description } = req.body;
+
+    const professionalId = req.professional.id;
+
+    const { name, duration, price, description } = req.body;
     
     const service = await Service.create({
       professionalId,
@@ -16,6 +18,7 @@ exports.createService = async (req, res) => {
 
     res.status(201).json(service);
   } catch (error) {
+    console.error('Error creating service:', error)
     res.status(500).json({ error: error.message });
   }
 };
@@ -29,6 +32,7 @@ exports.getProfessionalServices = async (req, res) => {
     });
     res.json(services);
   } catch (error) {
+    console.error('Error getting professional services by param:', error)
     res.status(500).json({ error: error.message });
   }
 };
@@ -64,3 +68,17 @@ exports.deleteService = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+  exports.getProfessionalServicesForAuthUser = async (req, res) => {
+  try {
+    const professionalId = req.professional.id;
+    const services = await Service.findAll({
+      where: { professionalId },
+      order: [['name', 'ASC']]
+    });
+    res.json(services);
+  } catch (error) {
+    console.error('Error getting authenticated professional services:', error);
+    res.status(500).json({ error: error.message });
+  }
+  };

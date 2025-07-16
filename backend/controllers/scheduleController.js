@@ -1,6 +1,6 @@
 // const { Schedule, Professional } = require('../models');
-const { Schedule } = require('../models/Schedule');
-const { Professional } = require('../models/Professional');
+const Schedule = require('../models/Schedule');
+const Professional = require('../models/Professional');
 
 exports.createSchedule = async (req, res) => {
   try {

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { Professional } = require('../models/Professional');
+const Professional = require('../models/Professional');
 
 const authMiddleware = async (req, res, next) => {
   try {

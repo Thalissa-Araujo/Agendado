@@ -45,12 +45,10 @@ const Professional = sequelize.define('Professional', {
   businessAddress: {
     type: DataTypes.TEXT
   }
-}, {
-  instanceMethods: {
-    comparePassword: function(candidatePassword) {
-      return bcrypt.compareSync(candidatePassword, this.password);
-    }
-  }
 });
+
+Professional.prototype.comparePassword = function(candidatePassword) {
+  return bcrypt.compareSync(candidatePassword, this.password);
+};
 
 module.exports = Professional;

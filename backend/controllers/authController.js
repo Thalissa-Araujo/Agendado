@@ -1,21 +1,24 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { Professional } = require('../models/Professional');
+const Professional = require('../models/Professional');
 
 exports.register = async (req, res) => {
   try {
     const { name, email, password, phone, whatsappNumber } = req.body;
+
+  if (!email || !password || !name || !phone || !whatsappNumber) {
+  return res.status(400).json({ error: 'All fields are required' });
+}
     
     const existingProfessional = await Professional.findOne({ where: { email } });
     if (existingProfessional) {
       return res.status(400).json({ error: 'Email already in use' });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
     const professional = await Professional.create({
       name,
       email,
-      password: hashedPassword,
+      password,
       phone,
       whatsappNumber
     });

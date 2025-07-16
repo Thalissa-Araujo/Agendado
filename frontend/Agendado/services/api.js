@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { BASE_URL } from '../constants/config';
 
@@ -8,7 +9,7 @@ import { BASE_URL } from '../constants/config';
  * - Trata erros globais
  */
 const api = axios.create({
-  baseURL: BASE_URL,
+  baseURL: 'http://192.168.1.9:5000/api',
   timeout: 10000,
 });
 
@@ -26,13 +27,11 @@ api.interceptors.request.use(
   }
 );
 
-// Interceptor para tratar erros de resposta
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response.status === 401) {
+    if (error.response && error.response.status === 401) {
       // Token expirado - redireciona para login
-      // Você pode adicionar sua lógica de logout aqui
     }
     return Promise.reject(error);
   }

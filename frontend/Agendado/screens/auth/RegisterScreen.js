@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
 import { useTheme } from '../../Theme/ThemeProvider';
 import { useAuth } from '../../hooks/useAuth';
 import api from '../../services/api';
@@ -39,7 +39,8 @@ const RegisterScreen = ({ navigation }) => {
       await login(form.email, form.password);
       
     } catch (err) {
-      setError(err.response?.data?.error || 'Erro ao cadastrar');
+      console.log('Erro detalhado:', err, err.response?.data);
+      setError(err.response?.data?.error || err.message || 'Erro ao cadastrar');
     } finally {
       setLoading(false);
     }
@@ -124,6 +125,8 @@ const RegisterScreen = ({ navigation }) => {
       </View>
     </KeyboardAvoidingView>
   );
+
+  
 };
 
 const styles = StyleSheet.create({

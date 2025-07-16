@@ -1,8 +1,8 @@
-const { Appointment, Professional, Service } = require('../models');
-//const { Professional } = require('../models/Professional');
-//const { Appointment } = require('../models/Appointment');
-//const { Service } = require('../models/Service');
-const { sendNotification } = require('../services/notificationService');
+//const { Appointment, Professional, Service } = require('../models');
+const Professional = require('../models/Professional');
+const Appointment = require('../models/Appointment');
+const Service = require('../models/Service');
+const sendNotification = require('../services/notificationService');
 
 exports.createAppointment = async (req, res) => {
   try {
@@ -18,7 +18,6 @@ exports.createAppointment = async (req, res) => {
       status: 'scheduled'
     });
 
-    // Send notification to professional
     const professional = await Professional.findByPk(professionalId);
     await sendNotification({
       to: professional.deviceToken,
