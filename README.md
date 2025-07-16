@@ -129,7 +129,7 @@ agendado/                  # Pasta raiz
 ## Solução de Problemas Comuns
 ### Erro "Failed to download remote update"
 - Verifique se o backend está rodando
-- Celular e computador devem estar na mesma rede
+- Celular e computador devem estar na mesma rede wifi
 ### Erros de dependência
 - Execute `npx expo install --fix` no frontend
 - Delete `node_modules` e `package-lock.json` e reinstale (npm install)
