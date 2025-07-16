@@ -138,7 +138,7 @@ agendado/                  # Pasta raiz
 
 ## Contribuição
 
-Após fazer suas mudanças rode no terminal na pasta raiz do projeto (pasta Agendado):
+Após fazer suas mudanças, rode no terminal na pasta raiz do projeto (pasta Agendado):
 
 ````````````bash
 git add .
