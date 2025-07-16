@@ -73,7 +73,7 @@ node app.js
 ### Configurar o Frontend
 
 ```bash
-cd ../frontend/Agendado
+cd frontend/Agendado
 `````````````````````````````````
 
 #### Instalar dependências
