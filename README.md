@@ -94,7 +94,7 @@ Após iniciar o frontend com `npx expo start`:
 1. Escaneie o QR code com o app **Expo Go** (disponível na Play Store)
 2. Ou execute em um emulador:
    - Android: pressione `a` no terminal
-3. Abrir o link localhost na web
+3. Ou Abrir o link localhost na web
 
 ### Banco de Dados
 - O banco de dados SQLite será criado automaticamente na pasta `backend` (verifica se está lá)
