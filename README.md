@@ -6,7 +6,7 @@ O Agendado é uma solução completa para profissionais autônomos (como cabelei
 -------------------------------------------------------------------
 ### 1. Clonar o repositório
 
-Cria uma pasta no seu computador, abre ela no Vs Code e no terminal roda:
+Crie uma pasta no seu computador, abre ela no Vs Code e no terminal roda:
 
 ``````````````````bash
 git clone https://github.com/Thalissa-Araujo/Agendado.git
