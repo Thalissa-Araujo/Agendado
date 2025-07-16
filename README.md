@@ -48,7 +48,7 @@ Regra de ouro: **Nunca trabalhar diretamente na branch main ou master.**
 
 ### Para rodar o backend:
 
-Renomeie o arquivo .env.example para .env.
+Renomeie o arquivo .env.example para .env
 
 Após isso:
 
