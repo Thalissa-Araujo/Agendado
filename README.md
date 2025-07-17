@@ -75,7 +75,7 @@ node app.js
 Abrir um terminal diferente de onde o backend está rodando
 
 ```bash
-cd frontend/Agendado
+cd Agendado/frontend/Agendado
 `````````````````````````````````
 
 #### Instalar dependências
@@ -97,7 +97,7 @@ Após iniciar o frontend com `npx expo start`:
 3. Ou Abrir o link localhost na web
 
 ### Banco de Dados
-- O banco de dados SQLite será criado automaticamente na pasta `backend` (verifica se está lá)
+- O banco de dados SQLite será criado automaticamente (verifica se o arquivo database.sqlite existe)
 
 ### WhatsApp Integration (Opcional)
 Para ativar a integração com WhatsApp:

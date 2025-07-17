@@ -5,6 +5,7 @@ import { useAuth } from '../hooks/useAuth';
 import api from '../services/api';
 import ShareModal from '../components/ShareModal';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 /**
  * Tela de configurações do aplicativo
@@ -37,6 +38,8 @@ const SettingsScreen = () => {
       ]
     );
   };
+
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.container, { backgroundColor: theme.background }]}>
@@ -85,6 +88,19 @@ const SettingsScreen = () => {
           </View>
           <Ionicons name="chevron-forward" size={20} color={theme.mediumGray} />
         </TouchableOpacity>
+
+        <TouchableOpacity
+  style={styles.settingItem}
+  onPress={() => navigation.navigate('ShareScreen')}
+>
+        <View style={styles.settingInfo}>
+          <Ionicons name="folder-open" size={20} color={theme.text} />
+          <Text style={[styles.settingText, { color: theme.text }]}>
+            Agendas Compartilhadas
+          </Text>
+        </View>
+        <Ionicons name="chevron-forward" size={20} color={theme.mediumGray} />
+      </TouchableOpacity>
 
         <TouchableOpacity style={styles.settingItem}>
           <View style={styles.settingInfo}>

@@ -9,6 +9,7 @@ import CalendarScreen from '../screens/CalendarScreen';
 import ServicesScreen from '../screens/ServicesScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import AppointmentDetailScreen from '../screens/AppointmentDetailScreen';
+import ShareScreen from '../screens/ShareScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -68,6 +69,14 @@ const AppNavigator = () => {
         options={{
           headerShown: true,
           title: 'Detalhes do Agendamento',
+        }}
+      />
+      <Stack.Screen 
+        name="ShareScreen" 
+        component={ShareScreen}
+        options={{
+        headerShown: true,
+        title: 'Agendas Compartilhadas',
         }}
       />
     </Stack.Navigator>

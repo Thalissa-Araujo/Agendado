@@ -4,15 +4,35 @@ const Professional = require('../models/Professional');
 
 exports.shareCalendar = async (req, res) => {
   try {
-    const { ownerId, sharedWithId, permissionLevel } = req.body;
+    const ownerId = req.professional.id;
+
+    const { sharedWithEmail, permissionLevel } = req.body;
+
+    console.log('Tentando compartilhar agenda...');
+    console.log('ownerId (do token):', ownerId);
+    console.log('sharedWithEmail (do body):', sharedWithEmail);
     
-    const owner = await Professional.findByPk(ownerId);
-    const sharedWith = await Professional.findByPk(sharedWithId);
-    
-    if (!owner || !sharedWith) {
-      return res.status(404).json({ error: 'Professional not found' });
+      if (!sharedWithEmail) { // Validar se o email foi enviado
+      return res.status(400).json({ error: 'Shared professional email is required.' });
     }
 
+    const sharedWith = await Professional.findOne({ where: { email: sharedWithEmail } });
+
+    const owner = await Professional.findByPk(ownerId);
+
+    console.log('Resultado da busca por owner:', owner ? owner.id : 'Não encontrado');
+    console.log('Resultado da busca por sharedWith (pelo email):', sharedWith ? sharedWith.id : 'Não encontrado');
+
+    if (!owner) {
+      return res.status(404).json({ error: 'Owner professional (from token) not found in DB.' });
+    }
+    
+    if (!sharedWith) {
+      return res.status(404).json({ error: 'Professional to share with not found. Please check the email.' });
+    }
+
+    const sharedWithId = sharedWith.id;
+    
     const existingShare = await SharedCalendar.findOne({
       where: { ownerId, sharedWithId }
     });
@@ -29,6 +49,7 @@ exports.shareCalendar = async (req, res) => {
 
     res.status(201).json(sharedCalendar);
   } catch (error) {
+    console.error('Error sharing calendar:', error);
     res.status(500).json({ error: error.message });
   }
 };

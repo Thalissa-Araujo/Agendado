@@ -11,5 +11,6 @@ router.use('/appointments', appointmentRoutes);
 router.use('/services', serviceRoutes);
 router.use('/schedules', scheduleRoutes);
 router.use('/share', shareRoutes);
+console.log('shareRoutes mounted at /share');
 
 module.exports = router;

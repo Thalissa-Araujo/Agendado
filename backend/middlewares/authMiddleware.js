@@ -9,6 +9,7 @@ const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ error: 'Authentication required' });
     }
 
+    console.log('JWT_SECRET being used:', process.env.JWT_SECRET);
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const professional = await Professional.findByPk(decoded.id);
     
@@ -19,6 +20,7 @@ const authMiddleware = async (req, res, next) => {
     req.professional = professional;
     next();
   } catch (error) {
+    console.error('Authentication Error:', error);
     res.status(401).json({ error: 'Invalid authentication token' });
   }
 };

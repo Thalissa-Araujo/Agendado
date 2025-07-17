@@ -32,7 +32,7 @@ const AppContent = () => {
  */
 export default function App() {
   return (
-    <AuthProvider> {/* Adicione o AuthProvider AQUI */}
+    <AuthProvider>
       <ThemeProvider>
         <AppContent />
       </ThemeProvider>
