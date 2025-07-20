@@ -1,12 +1,13 @@
+/*
 import { useEffect, useRef } from 'react';
 import { Platform } from 'react-native';
 import * as Notifications from 'expo-notifications';
 import api from '../services/api';
 
-/**
+/
  * Hook personalizado para gerenciar notificações push
  * @param {Function} handleNotification - Callback para notificações recebidas
- */
+ /
 const useNotifications = (handleNotification) => {
   const notificationListener = useRef();
   const responseListener = useRef();
@@ -52,13 +53,13 @@ const useNotifications = (handleNotification) => {
     setupNotifications();
   }, [handleNotification]);
 
-  /**
+  /
    * Agenda uma notificação local
    * @param {Object} options - Opções da notificação
    * @param {string} options.title - Título da notificação
    * @param {string} options.body - Corpo da notificação
    * @param {Date} options.date - Data para exibir a notificação
-   */
+   /
   const scheduleNotification = async ({ title, body, date }) => {
     await Notifications.scheduleNotificationAsync({
       content: {
@@ -74,3 +75,4 @@ const useNotifications = (handleNotification) => {
 };
 
 export default useNotifications;
+*/

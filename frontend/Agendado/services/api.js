@@ -9,7 +9,7 @@ import { BASE_URL } from '../constants/config';
  * - Trata erros globais
  */
 const api = axios.create({
-  baseURL: 'http://192.168.1.9:5000/api',
+  baseURL: 'http://SEU_IP_AQUI/api',
   timeout: 10000,
 });
 

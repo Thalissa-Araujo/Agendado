@@ -351,13 +351,13 @@ const handleClientPhone = async (from, response) => {
 
     // Send notification to professional
     const professional = await Professional.findByPk(session.data.professionalId);
-    if (professional && professional.deviceToken) {
-      await sendNotification({
-        to: professional.deviceToken,
-        title: 'Novo agendamento',
-        body: `${session.data.clientName} agendou ${session.data.serviceName} para ${formattedDate} às ${session.data.time}`
-      });
-    }
+    //if (professional && professional.deviceToken) {
+    //  await sendNotification({
+    //    to: professional.deviceToken,
+    //    title: 'Novo agendamento',
+    //    body: `${session.data.clientName} agendou ${session.data.serviceName} para ${formattedDate} às ${session.data.time}`
+    //  });
+    //}
 
     delete sessions[from];
   } catch (error) {

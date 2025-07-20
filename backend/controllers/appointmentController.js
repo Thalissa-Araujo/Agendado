@@ -19,11 +19,11 @@ exports.createAppointment = async (req, res) => {
     });
 
     const professional = await Professional.findByPk(professionalId);
-    await sendNotification({
-      to: professional.deviceToken,
-      title: 'Novo agendamento',
-      body: `${clientName} agendou um serviço para ${date} às ${time}`
-    });
+    //await sendNotification({
+    //  to: professional.deviceToken,
+    //  title: 'Novo agendamento',
+    //  body: `${clientName} agendou um serviço para ${date} às ${time}`
+    //});
 
     res.status(201).json(appointment);
   } catch (error) {

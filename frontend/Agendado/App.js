@@ -16,7 +16,7 @@ const AppContent = () => {
   // Verifica autenticação ao iniciar
   useEffect(() => {
     checkAuth();
-    NotificationService.setup();
+  //  NotificationService.setup();
   }, []);
 
   return (

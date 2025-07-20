@@ -50,7 +50,7 @@ if (IS_PRODUCTION) {
   console.log('Modo produção: WhatsApp via Ngrok');
 } else {
   setupWhatsApp();
-  setupNotifications();
+  //setupNotifications();
   console.log('Modo desenvolvimento: Serviços locais ativos');
 }
 
