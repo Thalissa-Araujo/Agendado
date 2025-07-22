@@ -11,7 +11,7 @@ export default {
   // URL base da API (backend)
   BASE_URL: process.env.EXPO_PUBLIC_API_URL || 'http://SEU_IP_AQUI:5000/api',
   
-  GOOGLE_API_KEY: process.env.EXPO_PUBLIC_GOOGLE_API_KEY || 'AIzaSyBtpbF_Pk-WKLw45cidiYYDFCC_Ekt-Vf0',
+  GOOGLE_API_KEY: process.env.EXPO_PUBLIC_GOOGLE_API_KEY || 'SUA_CHAVE_AQUI',
 
   // Configurações de notificação
   NOTIFICATION: {
